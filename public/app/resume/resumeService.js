@@ -19,7 +19,6 @@
             getDescriptions,
             geteducationDescriptions,
             getAffiliations
-           
         };
 
         return service;
@@ -38,21 +37,21 @@
             affiliations = $firebaseArray(ref.child('affiliations'))
         }
 
-        function getAffiliations(){
+        function getAffiliations() {
             return affiliations;
         }
 
-        function getDescriptions(){
+        function getDescriptions() {
             return expDescriptions
         }
 
-        function geteducationDescriptions(){
+        function geteducationDescriptions() {
             return educationDescriptions
         }
 
         function getEducation() {
             return education
-        
+
         }
 
         function getExperience() {

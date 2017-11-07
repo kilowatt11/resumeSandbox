@@ -23,7 +23,6 @@
         function activate() {
             ResumeService.initResume($stateParams.id);
             $scope.affiliations = ResumeService.getAffiliations();
-
         }
 
         function saveMessage() {
@@ -32,7 +31,6 @@
             $timeout(function () {
                 $scope.showMessage = false;
             }, 2000);
-
         }
 
         /*Affiliations*/
@@ -52,7 +50,4 @@
             $scope.affiliations.$remove(topic)
         }
     }
-
-
-
 }());

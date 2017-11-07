@@ -1,9 +1,10 @@
-
 <!-- View skills -->
 {{message}}
 <h3>Skills </h3>
 <div ng-hide="showSkillsForm">
-    <button type="button" class="btn btn-default pull-right" ng-click="editSkills()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+    <button type="button" class="btn btn-default pull-right" ng-click="editSkills()">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </button>
     <ul>
         <li ng-repeat="skill in skills">
             {{skill.skill}}
@@ -12,8 +13,8 @@
 </div>
 <!-- View skills -->
 
- <!-- Edit Skills -->
- <div ng-show="showSkillsForm">
+<!-- Edit Skills -->
+<div ng-show="showSkillsForm">
     <button type="button" class="btn btn-success pull-right" ng-click="saveSkills()">Save</button>
     <div ng-repeat="skill in skills">
         <form ng-submit="saveSkills()">

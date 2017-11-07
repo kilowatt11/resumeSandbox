@@ -31,11 +31,10 @@
             $timeout(function () {
                 $scope.showMessage = false;
             }, 2000);
-
         }
 
-         /*Skills*/
-         function addSkills() {
+        /*Skills*/
+        function addSkills() {
             $scope.skills.$add({ uid: $scope.uid, skill: '' });
         }
 

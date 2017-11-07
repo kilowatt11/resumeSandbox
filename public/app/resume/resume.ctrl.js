@@ -41,11 +41,10 @@
         $scope.saveAffiliations = saveAffiliations;
         $scope.affiliationShow = false;
 
-
-
-
-
         activate();
+
+
+        //////////////////
 
         function activate() {
             ResumeService.initResume($scope.uid);
@@ -172,10 +171,5 @@
         function removeAffiliation(topic) {
             $scope.affiliations.$remove(topic)
         }
-
-
     }
-
-
-
 }());

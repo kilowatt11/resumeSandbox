@@ -1,14 +1,14 @@
 <div class="row">
-    <div class="skills">
-      <h1>Skills</h1>
-      <form ng-submit="saveSkills()" ng-repeat="skill in skills">
-        <div class="form-group">
-          <button type="button" ng-click="removeSkill(skill)">Delete</button>
-          <input type="text" class="form-control" placeholder="Skill" ng-model="skill.skill">
-        </div>
-      </form>
-      <button type="button" class="btn btn-primary pull-right" ng-click="addSkills()">Add</button>
-      <button type="button" class="btn btn-success pull-left" ng-click="saveSkills(skill)">Save</button>
-    </div>
+  <div class="skills">
+    <h1>Skills</h1>
+    <form ng-submit="saveSkills()" ng-repeat="skill in skills">
+      <div class="form-group">
+        <button type="button" ng-click="removeSkill(skill)">Delete</button>
+        <input type="text" class="form-control" placeholder="Skill" ng-model="skill.skill">
+      </div>
+    </form>
+    <button type="button" class="btn btn-primary pull-right" ng-click="addSkills()">Add</button>
+    <button type="button" class="btn btn-success pull-left" ng-click="saveSkills(skill)">Save</button>
+  </div>
 </div>
 <div ng-model="message" ng-show="showMessage" class="message text-center">{{message}}</div>

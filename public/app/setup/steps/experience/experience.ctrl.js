@@ -34,7 +34,6 @@
             $timeout(function () {
                 $scope.showMessage = false;
             }, 2000);
-
         }
 
         /*Experience*/

@@ -2,20 +2,17 @@
     'use strict';
 
     angular.module('app')
-        .controller('WizardCtrl', WizardCtrl)
+        .controller('SetupCtrl', SetupCtrl)
 
-    WizardCtrl.$inject = ['$scope', '$state', '$stateParams', 'ResumeService', '$timeout', 'SetupService']
+    SetupCtrl.$inject = ['$scope', '$state', '$stateParams', 'ResumeService', '$timeout', 'SetupService']
 
 
-    function WizardCtrl($scope, $state, $stateParams, ResumeService, $timeout, SetupService) {
+    function SetupCtrl($scope, $state, $stateParams, ResumeService, $timeout, SetupService) {
         $scope.uid = $stateParams.id;
         $scope.steps = SetupService.getSteps();
 
         $scope.nextStep = nextStep;
         $scope.prevStep = prevStep;
-
-
-
 
         activate();
 
