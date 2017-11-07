@@ -1,0 +1,38 @@
+<div class="row ">
+        <div class="education">
+          <h1>Education</h1>
+          <div ng-model="message" ng-show="showMessage" class="message text-center">{{message}}</div>
+          <button type="button" class="btn btn-primary pull-right" ng-click="addEducation()">Add Education</button>
+          <button type="button" class="btn btn-success pull-left" ng-click="saveEducation()">Save</button>
+          <div ng-repeat="school in education">
+            <h3>Exp: {{$index +1}}</h3>
+            <button type="button" ng-click="removeExperience(exp)">Delete</button>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" placeholder="" ng-model="school.title">
+            </div>
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input type="text" class="form-control" placeholder="" ng-model="school.location1">
+            </div>
+            <div class="form-group">
+              <label for="organization">Organization</label>
+              <input type="text" class="form-control" placeholder="" ng-model="school.organization">
+            </div>
+            <div class="form-group">
+              <label for="startDate">Start Date</label>
+              <input type="text" class="form-control" placeholder="" ng-model="school.startYear">
+            </div>
+            <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="text" class="form-control" placeholder="" ng-model="school.endYear">
+              </div>
+              <button type="button" class="btn btn-primary pull-right" ng-click="addEducationDescription(school)">Add Description</button>
+              <div class="form-group" ng-repeat="item in educationDescriptions">
+                <button type="button" class="btn btn-primary pull-right" ng-click="removeEducationDescription(item)">delete</button>
+                <label for="description">Description: {{$index +1}}</label>
+                <input type="text" class="form-control" placeholder="" ng-model="item.item">
+              </div>
+          </div>
+        </div>
+      </div>

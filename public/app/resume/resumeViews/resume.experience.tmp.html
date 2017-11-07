@@ -1,0 +1,54 @@
+<h3>
+    <strong>Experience</strong>
+</h3>
+
+{{message}}
+
+<!-- Entry View-->
+<div class="entry" ng-repeat="exp in experience" ng-hide="experienceShow">
+    <button type="button" class="btn btn-default pull-right" ng-click="editExperience()">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </button>
+    <h3>
+        <strong>{{exp.title}}</strong>
+    </h3>
+
+    <div class="pull-right">
+        <h4>Start: {{exp.startYear}} End: {{exp.endYear}}</h4>
+    </div>
+
+    <h3>{{exp.organization}} </h3>
+    <ul>
+        <li ng-repeat="description in expDescriptions |filter: {$:exp.$id}">{{description.item}}</li>
+
+    </ul>
+</div>
+<!-- Entry View-->
+
+<!-- Entry Edit -->
+<div ng-show="experienceShow">
+    <button type="button" class="btn btn-success pull-right" ng-click="saveExperience()">Save</button>
+    <form ng-submit="saveExperience()" ng-repeat="exp in experience">
+        <h3>Experience:{{$index + 1}}</h3>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" placeholder="" ng-model="exp.title">
+        </div>
+        <div class="form-group">
+            <label for="startYear">Start Year</label>
+            <input type="text" class="form-control" placeholder="" ng-model="exp.startYear">
+        </div>
+        <div class="form-group">
+            <label for="endYear">End Year</label>
+            <input type="text" class="form-control" placeholder="" ng-model="exp.endYear">
+        </div>
+        <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" class="form-control" placeholder="" ng-model="exp.organization">
+        </div>
+        <div class="form-group" ng-repeat="description in expDescriptions |filter: {$:exp.$id}">
+            <label for="description">Description: {{$index +1}}</label>
+            <input type="text" class="form-control" placeholder="" ng-model="description.item">
+        </div>
+    </form>
+</div>

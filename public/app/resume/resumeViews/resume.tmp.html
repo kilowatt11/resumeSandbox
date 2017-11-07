@@ -1,0 +1,149 @@
+<div class="container body" id="body">
+    <!-- /View Summary -->
+    <div class="container summary" id="summary">
+        <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+                <img src="{{summary.profile}}" alt="profile" class="img-responsive img-circle" id="profile" />
+            </div>
+            <div class="col-md-6" ng-hide="showSummaryForm">
+                <h1>
+                    <strong>{{summary.name}}</strong>
+
+                    <button type="button" class="btn btn-default pull-right" ng-click="editSummary()">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                </h1>
+                <h2>
+                    <strong>{{summary.title}}</strong>
+                </h2>
+                <h2>
+                    <span class="glyphicon glyphicon-home"></span>&nbsp;{{summary.location}}</h2>
+                <h2>
+                    <span class="glyphicon glyphicon-phone-alt"></span>&nbsp;{{summary.phone}}</h2>
+                <h2>
+                    <span class="glyphicon glyphicon-envelope"></span>&nbsp;{{summary.email}}</h2>
+                <h2>{{summary.information}}</h2>
+                <div style="font-size: 20px;">
+                    <a href="https://www.facebook.com/ghulamsahki.fekrat">
+                        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ghulam-sakhi-fikrat-0b223613b/">
+                        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/?hl=en">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <!-- View Summary -->
+
+            <!-- Edit Summary -->
+            <div class="col-md-6" ng-show="showSummaryForm">
+                <form ng-submit="saveSummary()">
+                    <button type="button" class="btn btn-success pull-right" ng-click="saveSummary()">Save</button>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name" ng-model="summary.name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Title" ng-model="summary.title">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Location" ng-model="summary.location">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Phone #" ng-model="summary.phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="email" ng-model="summary.email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Information" ng-model="summary.information">
+                    </div>
+                </form>
+            </div>
+
+            <!-- Edit Summary -->
+        </div>
+    </div>
+
+    <!-- navbar -->
+    <div class="container" id="navbar">
+        <ul class="nav nav-tabs ">
+            <li class="active">
+                <a data-toggle="tab" href data-target="#professionalSummary">Professional Summary</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href data-target="#skills" ui-sref="resume.skills({id: uid})">Key Skills</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href data-target="#experience" ui-sref="resume.experience({id: uid})" role="tab">Professional Experiences</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href data-target="#education" ui-sref="resume.education({id: uid})">Education</a>
+            </li>
+            <li>
+                <a data-toggle="tab" href data-target="#affiliation" ui-sref="resume.affiliations({id: uid})">Affiliation</a>
+            </li>
+        </ul>
+
+        <!-- Profesional Summary -->
+
+        <div class="tab-content" id="tab-content">
+            <div class="tab-pane fade in active" id="professionalSummary">
+
+                <!-- View Professional Summary -->
+                <div ng-hide="showSummaryForm">
+                    <h3>Professional Summary</h3>
+                    <button type="button" class="btn btn-default pull-right" ng-click="editSummary()">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    </button>
+                    <p>{{summary.summaryone}}</p>
+                </div>
+                <!-- View Professional Summary -->
+
+                <!-- Edit Professional Summary -->
+                <div class="tab-pane fade in active" ng-show="showSummaryForm">
+                    <form ng-submit="saveSummary()">
+                        <button type="button" class="btn btn-success pull-right" ng-click="saveSummary()">Save</button>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Info" ng-model="summary.summaryone">
+                        </div>
+                    </form>
+                </div>
+                <!-- Edit Professional Summary -->
+            </div>
+
+            <!-- Skills -->
+            <div id="skills" class="tab-pane fade">
+
+                <div ui-view></div>
+
+            </div>
+
+            <!-- Experience -->
+            <div id="experience" class="tab-pane fade">
+
+                <div ui-view></div>
+
+            </div>
+
+            <!-- Education -->
+            <div id="education" class="tab-pane fade">
+
+                <div ui-view></div>
+
+            </div>
+
+            <!-- Affiliation -->
+            <div id="affiliation" class="tab-pane fade">
+
+                    <div ui-view></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- navbar -->
+</div>

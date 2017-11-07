@@ -1,0 +1,9 @@
+<div class="container setup" id="setup">
+    <div class="row">
+        <button class="btn btn-default pull-left" ng-hide="currStep.prev === null" ng-click="prevStep()">Prev</button>
+        <button class="btn btn-default pull-right" ng-hide="currStep.next === null" ng-click="nextStep()">Next</button>
+    </div>
+    <div class="row">
+        <div ui-view></div>
+    </div>
+</div>

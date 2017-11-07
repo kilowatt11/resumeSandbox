@@ -1,0 +1,51 @@
+<!-- Education View -->
+<h3>Education</h3>
+<div ng-hide="educationShow">
+    <button type="button" class="btn btn-default pull-right" ng-click="editEducation()">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </button>
+    <div ng-repeat="educate in education">
+        <h3>
+            <strong>{{educate.title}}</strong>
+        </h3>
+        <h4 class="pull-right">Start: {{educate.startYear}} End: {{educate.endYear}}</h4>
+        <h3>{{educate.location1}}</h3>
+        <h3>{{educate.organization}}</h3>
+        <ul>
+            <li ng-repeat="edu in educate.descriptions">{{edu.item}}</li>
+        </ul>
+    </div>
+</div>
+<!-- Education View -->
+
+<!-- Education Edit -->
+<div ng-show="educationShow">
+    <button type="button" class="btn btn-success pull-right" ng-click="saveEducation()">Save</button>
+    <form ng-submit="saveEducation()" ng-repeat="educate in education">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" placeholder="" ng-model="educate.title">
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start</label>
+            <input type="text" class="form-control" placeholder="" ng-model="educate.startYear">
+        </div>
+        <div class="form-group">
+            <label for="endDate">End</label>
+            <input type="text" class="form-control" placeholder="" ng-model="educate.endYear">
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" placeholder="" ng-model="educate.location1">
+        </div>
+        <div class="form-group">
+            <label for="organization">Organization</label>
+            <input type="text" class="form-control" placeholder="" ng-model="educate.organization">
+        </div>
+        <div class="form-group" ng-repeat="edu in educate.descriptions">
+            <label for="description">Description: {{$index +1}}</label>
+            <input type="text" class="form-control" placeholder="" ng-model="edu.item">
+        </div>
+    </form>
+</div>
+<!-- Education Edit -->

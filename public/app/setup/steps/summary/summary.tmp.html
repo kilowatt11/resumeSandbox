@@ -1,0 +1,36 @@
+<!-- Add Summary Form -->
+<div class="row">
+  <div class="data">
+    <h1>Summary Info</h1>
+    <form ng-submit="saveSummary()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Profile Pic" ng-model="summary.pic">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Name" ng-model="summary.name">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Title" ng-model="summary.title">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Location" ng-model="summary.location">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Phone #" ng-model="summary.phone">
+      </div>
+      <div class="form-group">
+        <input type="email" class="form-control" placeholder="email" ng-model="summary.email">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Information" ng-model="summary.information">
+      </div>
+      <div class="form-group">
+        <label for="professionalSummary">Professional Summary</label>
+        <input type="text" class="form-control" placeholder="Information" ng-model="summary.summaryone">
+      </div>
+      <button type="submit" class="btn btn-success pull-right" ng-click="saveSummary()">Save</button>
+    </form>
+    <div ng-model="message" ng-show="showMessage" class="message">{{message}}</div>
+  </div>
+</div>
+

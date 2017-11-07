@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="affiliations">
+    <h1>Affiliations</h1>
+    <form ng-submit="saveAffiliations()" ng-repeat="topic in affiliations">
+      <div class="form-group">
+        <button type="button" ng-click="removeAffiliation(topic)">Delete</button>
+        <input type="text" class="form-control" placeholder="" ng-model="topic.item">
+      </div>
+    </form>
+    <button type="button" class="btn btn-primary pull-right" ng-click="addAffiliations()">Add</button>
+    <button type="button" class="btn btn-success pull-left" ng-click="saveAffiliations(topic)">Save</button>
+  </div>
+</div>
+<div ng-model="message" ng-show="showMessage" class="message text-center">{{message}}</div>
+<div class="text-center">
+  <h3>Click
+    <a ui-sref="resume({ id: uid })">here</a> to see your resume</h3>
+</div>

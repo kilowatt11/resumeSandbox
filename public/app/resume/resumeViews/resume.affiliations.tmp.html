@@ -1,0 +1,24 @@
+<!-- Affiliations View -->
+<h3>Affiliation</h3>
+<div ng-hide="affiliationShow">
+    <button type="button" class="btn btn-default pull-right" ng-click="editAffiliations()">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </button>
+    <ul>
+        <li ng-repeat="affi in affiliations">
+            {{affi.item}}
+        </li>
+    </ul>
+</div>
+<!-- Affiliations View -->
+
+<!-- Affiliations Edit -->
+<div ng-show="affiliationShow">
+    <button type="button" class="btn btn-success pull-right" ng-click="saveAffiliations()">Save</button>
+    <form ng-submit="saveAffiliations()" ng-repeat="affi in affiliations">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="" ng-model="affi.item">
+        </div>
+    </form>
+</div>
+<!-- Affiliations Edit -->
