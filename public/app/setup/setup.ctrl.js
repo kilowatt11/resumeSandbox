@@ -19,7 +19,7 @@
         ///////////////////////
 
         function activate() {
-            ResumeService.initResume($stateParams.id);
+            ResumeService.initResume($scope.uid);
 
             setCurrStep();
         }

@@ -21,8 +21,6 @@
                             var userObj = $firebaseObject(ref.child(data.uid));
                             userObj.email = $scope.email;
                             userObj.$save().then(function (data) {
-                                console.log(data.$id);
-                                console.log(data.uid)
                                 $state.go('setup.summary', { id: userObj.$id });
                             });
                         });

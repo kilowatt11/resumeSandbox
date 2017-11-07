@@ -24,7 +24,7 @@
         /////////////////////
 
         function activate() {
-            ResumeService.initResume($stateParams.id);
+            ResumeService.initResume($scope.uid);
             $scope.experience = ResumeService.getExperience();
             $scope.expDescriptions = ResumeService.getDescriptions();
         }

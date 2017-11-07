@@ -8,7 +8,6 @@
     SkillsCtrl.$inject = ['$scope', '$stateParams', 'ResumeService', '$timeout'];
 
     function SkillsCtrl($scope, $stateParams, ResumeService, $timeout) {
-
         $scope.uid = $stateParams.id;
         $scope.showMessage = false;
 
@@ -21,7 +20,7 @@
         /////////////////////
 
         function activate() {
-            ResumeService.initResume($stateParams.id);
+            ResumeService.initResume($scope.uid);
             $scope.skills = ResumeService.getSkills();
         }
 
