@@ -19,7 +19,7 @@
     <div ng-repeat="skill in skills">
         <form ng-submit="saveSkills()">
             <div class="form-group">
-                <button type="button" class="btn" ng-click="deleteSkills(skill)">Delete</button>
+                <button type="button" class="btn" ng-click="removeSkill(skill)">Delete</button>
                 <input type="text" class="form-control" placeholder="" ng-model="skill.skill">
             </div>
         </form>

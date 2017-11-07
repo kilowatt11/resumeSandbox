@@ -78,6 +78,10 @@
         function addSkill() {
             $scope.skills.$add({ uid: $scope.uid, skill: '' })
         }
+        
+        function removeSkill(skill) {
+            $scope.skills.$remove(skill);
+        }
 
         function saveSkills() {
             $scope.skills.forEach(function (skill) {

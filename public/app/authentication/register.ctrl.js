@@ -23,7 +23,7 @@
                             userObj.$save().then(function (data) {
                                 console.log(data.$id);
                                 console.log(data.uid)
-                                $state.go('wizard', { id: userObj.$id });
+                                $state.go('setup.summary', { id: userObj.$id });
                             });
                         });
                 });
