@@ -27,9 +27,11 @@
 
 <!-- Entry Edit -->
 <div ng-show="experienceShow">
+    <button type="button" class="btn btn-primary pull-right" ng-click="addExperience()">Add Experience</button>
     <button type="button" class="btn btn-success pull-right" ng-click="saveExperience()">Save</button>
     <form ng-submit="saveExperience()" ng-repeat="exp in experience">
         <h3>Experience:{{$index + 1}}</h3>
+        <button type="button" ng-click="removeExperience(exp)">Delete</button>
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" class="form-control" placeholder="" ng-model="exp.title">
@@ -46,8 +48,10 @@
             <label for="organization">Organization</label>
             <input type="text" class="form-control" placeholder="" ng-model="exp.organization">
         </div>
+        <button type="button" class="btn btn-primary pull-right" ng-click="addDescription(exp)">Add Description</button>
         <div class="form-group" ng-repeat="description in expDescriptions |filter: {$:exp.$id}">
             <label for="description">Description: {{$index +1}}</label>
+            <button type="button" ng-click="removeDescription(description)">delete</button>
             <input type="text" class="form-control" placeholder="" ng-model="description.item">
         </div>
     </form>

@@ -22,6 +22,7 @@
         $scope.editExperience = editExperience;
         $scope.addExperience = addExperience;
         $scope.saveExperience = saveExperience;
+        $scope.removeExperience = removeExperience;
         $scope.experienceShow = false;
 
         $scope.addDescription = addDescription;
@@ -99,7 +100,16 @@
         }
 
         function addExperience() {
-            $scope.skills.$add({ uid: $scope.uid, skill: '' })
+            $scope.experience.$add({ title: '', organization: '', startYear: '', endYear: '' });
+        }
+
+        function removeExperience(exp) {
+            $scope.experience.$remove(exp)
+            $scope.expDescriptions.forEach(function (description) {
+                if (exp.$id == description.experienceId) {
+                    $scope.expDescriptions.$remove(description)
+                }
+            })
         }
 
         function saveExperience() {
