@@ -26,6 +26,7 @@
         function activate() {
             ResumeService.initResume($stateParams.id);
             $scope.experience = ResumeService.getExperience();
+            $scope.expDescriptions = ResumeService.getDescriptions();
         }
 
         function saveMessage() {
