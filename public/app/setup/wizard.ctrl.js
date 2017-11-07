@@ -23,13 +23,6 @@
 
         function activate() {
             ResumeService.initResume($stateParams.id);
-            $scope.summary = ResumeService.getSummary();
-            $scope.skills = ResumeService.getSkills();
-            $scope.experience = ResumeService.getExperience();
-            $scope.education = ResumeService.getEducation();
-            $scope.expDescriptions = ResumeService.getDescriptions()
-            $scope.educationDescriptions = ResumeService.geteducationDescriptions();
-            $scope.affiliations = ResumeService.getAffiliations();
 
             setCurrStep();
         }

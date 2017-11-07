@@ -4,9 +4,9 @@
     angular.module('app')
         .controller('ResumeCtrl', ResumeCtrl)
 
-    ResumeCtrl.$inject = ['$scope','$state', '$stateParams', 'ResumeService']
+    ResumeCtrl.$inject = ['$scope', '$state', '$stateParams', 'ResumeService']
 
-    function ResumeCtrl($scope, $state ,$stateParams, ResumeService) {
+    function ResumeCtrl($scope, $state, $stateParams, ResumeService) {
 
         $scope.uid = $stateParams.id
         $scope.editSummary = editSummary;
@@ -43,7 +43,7 @@
 
 
 
-       
+
 
         activate();
 
@@ -61,27 +61,27 @@
 
         /*Summary*/
 
-        function editSummary(){
+        function editSummary() {
             $scope.showSummaryForm = true;
         }
 
-        function saveSummary(){
+        function saveSummary() {
             $scope.summary.$save();
             $scope.showSummaryForm = false;
         }
 
         /*Skills*/
 
-        function editSkills(){
+        function editSkills() {
             $scope.showSkillsForm = true;
         }
 
-        function addSkill(){
+        function addSkill() {
             $scope.skills.$add({ uid: $scope.uid, skill: '' })
         }
 
-        function saveSkills(){
-            $scope.skills.forEach(function(skill){
+        function saveSkills() {
+            $scope.skills.forEach(function (skill) {
                 $scope.skills.$save(skill);
             })
             $scope.showSkillsForm = false;
@@ -89,16 +89,16 @@
 
         /*Experience*/
 
-        function editExperience(){
+        function editExperience() {
             $scope.experienceShow = true;
         }
 
-        function addExperience(){
+        function addExperience() {
             $scope.skills.$add({ uid: $scope.uid, skill: '' })
         }
 
-        function saveExperience(){
-            $scope.skills.forEach(function(skill){
+        function saveExperience() {
+            $scope.skills.forEach(function (skill) {
                 $scope.skills.$save(skill);
             })
             $scope.experienceShow = false;
@@ -121,7 +121,7 @@
 
         /*Education*/
 
-        function editEducation(){
+        function editEducation() {
             $scope.educationShow = true;
         }
 
@@ -154,7 +154,7 @@
 
         /*Affiliations*/
 
-        function editAffiliations(){
+        function editAffiliations() {
             $scope.affiliationShow = true;
         }
 

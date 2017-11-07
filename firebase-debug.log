@@ -1,0 +1,36 @@
+[debug] [2017-11-07T19:00:16.031Z] ----------------------------------------------------------------------
+[debug] [2017-11-07T19:00:16.036Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\BLUEBOY\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-11-07T19:00:16.037Z] CLI Version:   3.14.0
+[debug] [2017-11-07T19:00:16.037Z] Platform:      win32
+[debug] [2017-11-07T19:00:16.037Z] Node Version:  v7.0.0
+[debug] [2017-11-07T19:00:16.038Z] Time:          Tue Nov 07 2017 12:00:16 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:16.038Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-11-07T19:00:16.356Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-11-07T19:00:16.357Z] > authorizing via signed-in user
+[debug] [2017-11-07T19:00:16.362Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-11-07T19:00:16.363Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/vA_rgcbM-9w-pifakd7P4m7WDHSdd_odpsFHlImsNVc',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Tue Nov 07 2017 12:00:16 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:16.630Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-07T19:00:16.666Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/resumesandbox-8b053  
+ Tue Nov 07 2017 12:00:16 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:17.275Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-07T19:00:17.277Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/resumesandbox-8b053/tokens  
+ Tue Nov 07 2017 12:00:17 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:17.697Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\source\apprenticeship\resumeSandbox'...
+[info] 
+[debug] [2017-11-07T19:00:17.702Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/resumesandbox-8b053  
+ Tue Nov 07 2017 12:00:17 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:18.421Z] <<< HTTP RESPONSE 200
+[debug] [2017-11-07T19:00:18.421Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/82591091457/clients/_:getWebAppConfig  
+ Tue Nov 07 2017 12:00:18 GMT-0700 (Mountain Standard Time)
+[debug] [2017-11-07T19:00:18.890Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
