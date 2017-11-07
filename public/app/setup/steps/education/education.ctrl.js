@@ -24,8 +24,9 @@
         /////////////////////
 
         function activate() {
-            ResumeService.initResume($stateParams.id);
+            ResumeService.initResume($scope.uid);
             $scope.education = ResumeService.getEducation();
+            $scope.educationDescriptions = ResumeService.geteducationDescriptions();
 
         }
 
