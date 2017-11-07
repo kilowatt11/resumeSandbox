@@ -14,7 +14,9 @@
         $scope.showSummaryForm = false;
 
         $scope.editSkills = editSkills;
+        $scope.addSkill = addSkill;
         $scope.saveSkills = saveSkills;
+        $scope.removeSkill = removeSkill;
         $scope.showSkillsForm = false;
 
         $scope.editExperience = editExperience;
@@ -101,8 +103,8 @@
         }
 
         function saveExperience() {
-            $scope.skills.forEach(function (skill) {
-                $scope.skills.$save(skill);
+            $scope.experience.forEach(function (item) {
+                $scope.experience.$save(item);
             })
             $scope.experienceShow = false;
         }
