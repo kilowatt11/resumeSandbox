@@ -31,6 +31,7 @@
 
         $scope.editEducation = editEducation;
         $scope.addEducation = addEducation;
+        $scope.removeEducation = removeEducation;
         $scope.saveEducation = saveEducation;
         $scope.educationShow = false;
 
@@ -143,6 +144,12 @@
         function addEducation() {
             $scope.education.$add({ title: '', location1: '', organization: '', startYear: '', endYear: '' });
         }
+
+        
+        function removeEducation(school) {
+            $scope.education.$remove(school)
+        }
+
         function saveEducation() {
             $scope.education.forEach(function (school) {
                 $scope.education.$save(school);

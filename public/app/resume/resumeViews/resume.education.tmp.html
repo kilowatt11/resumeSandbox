@@ -4,15 +4,15 @@
     <button type="button" class="btn btn-default pull-right" ng-click="editEducation()">
         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
     </button>
-    <div ng-repeat="educate in education">
+    <div ng-repeat="school in education">
         <h3>
-            <strong>{{educate.title}}</strong>
+            <strong>{{school.title}}</strong>
         </h3>
-        <h4 class="pull-right">Start: {{educate.startYear}} End: {{educate.endYear}}</h4>
-        <h3>{{educate.location1}}</h3>
-        <h3>{{educate.organization}}</h3>
+        <h4 class="pull-right">Start: {{school.startYear}} End: {{school.endYear}}</h4>
+        <h3>{{school.location1}}</h3>
+        <h3>{{school.organization}}</h3>
         <ul>
-            <li ng-repeat="edu in educate.descriptions">{{edu.item}}</li>
+            <li ng-repeat="description in educationDescriptions | filter: {$:school.$id}">{{description.item}}</li>
         </ul>
     </div>
 </div>
@@ -20,31 +20,36 @@
 
 <!-- Education Edit -->
 <div ng-show="educationShow">
+    <button type="button" class="btn btn-primary pull-right" ng-click="addEducation()">Add Education</button>
     <button type="button" class="btn btn-success pull-right" ng-click="saveEducation()">Save</button>
-    <form ng-submit="saveEducation()" ng-repeat="educate in education">
+    <form ng-submit="saveEducation()" ng-repeat="school in education">
+        <h3>Education:{{$index + 1}}</h3>
+        <button type="button" ng-click="removeEducation(school)">Delete</button>
         <div class="form-group">
-            <label for="title">Title</label>
-            <input type="text" class="form-control" placeholder="" ng-model="educate.title">
+            <label>Title</label>
+            <input type="text" class="form-control" placeholder="" ng-model="school.title">
         </div>
         <div class="form-group">
-            <label for="startDate">Start</label>
-            <input type="text" class="form-control" placeholder="" ng-model="educate.startYear">
+            <label>Start</label>
+            <input type="text" class="form-control" placeholder="" ng-model="school.startYear">
         </div>
         <div class="form-group">
-            <label for="endDate">End</label>
-            <input type="text" class="form-control" placeholder="" ng-model="educate.endYear">
+            <label>End</label>
+            <input type="text" class="form-control" placeholder="" ng-model="school.endYear">
         </div>
         <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" class="form-control" placeholder="" ng-model="educate.location1">
+            <label>Location</label>
+            <input type="text" class="form-control" placeholder="" ng-model="school.location1">
         </div>
         <div class="form-group">
-            <label for="organization">Organization</label>
-            <input type="text" class="form-control" placeholder="" ng-model="educate.organization">
+            <label>Organization</label>
+            <input type="text" class="form-control" placeholder="" ng-model="school.organization">
         </div>
-        <div class="form-group" ng-repeat="edu in educate.descriptions">
+        <button type="button" class="btn btn-primary pull-right" ng-click="addEducationDescription(school)">Add Description</button>
+        <div class="form-group" ng-repeat="description in educationDescriptions | filter: {$:school.$id}">
             <label for="description">Description: {{$index +1}}</label>
-            <input type="text" class="form-control" placeholder="" ng-model="edu.item">
+            <button type="button" ng-click="removeEducationDescription(description)">delete</button>
+            <input type="text" class="form-control" placeholder="" ng-model="description.item">
         </div>
     </form>
 </div>
