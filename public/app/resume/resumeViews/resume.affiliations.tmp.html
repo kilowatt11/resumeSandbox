@@ -15,9 +15,11 @@
 <!-- Affiliations Edit -->
 <div ng-show="affiliationShow">
     <button type="button" class="btn btn-success pull-right" ng-click="saveAffiliations()">Save</button>
-    <form ng-submit="saveAffiliations()" ng-repeat="affi in affiliations">
+    <button type="button" class="btn btn-primary pull-right" ng-click="addAffiliations()">Add</button>
+    <form ng-submit="saveAffiliations()" ng-repeat="topic in affiliations">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="" ng-model="affi.item">
+            <button type="button" ng-click="removeAffiliation(topic)">Delete</button>
+            <input type="text" class="form-control" placeholder="" ng-model="topic.item">
         </div>
     </form>
 </div>
