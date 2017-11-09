@@ -1,7 +1,7 @@
 <div class="row ">
   <div class="education">
     <h1>Education</h1>
-    <div ng-show="showMessage" class="message text-center">{{message}}</div>
+    <message-directive></message-directive>
     <button type="button" class="btn btn-primary pull-right" ng-click="addEducation()">Add Education</button>
     <button type="button" class="btn btn-success pull-left" ng-click="saveEducation()">Save</button>
     <div ng-repeat="school in education">

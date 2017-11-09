@@ -6,11 +6,7 @@
         .directive('logoutNav', logoutNav)
         .controller('DirectiveCtrl', DirectiveCtrl)
 
-
-    logoutNav.$inject = [];
-
-    function logoutNav($scope, AuthService) {
-
+    function logoutNav() {
         var directive = {
             restrict: 'E',
             template:
@@ -21,7 +17,6 @@
             </div>`,
             controller: 'DirectiveCtrl'
         }
-
         return directive;
     }
 
@@ -31,10 +26,9 @@
         $scope.logout = logout;
 
         function logout() {
-            AuthService.logout().then(function(){
+            AuthService.logout().then(function () {
                 $state.go('login');
-            })
-            .catch(function(error){
+            }).catch(function (error) {
                 console.log('Error: ' + error)
             });
         }

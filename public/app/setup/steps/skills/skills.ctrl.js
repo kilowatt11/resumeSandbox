@@ -45,7 +45,7 @@
             $scope.skills.forEach(function (skill) {
                 $scope.skills.$save(skill);
             });
-            saveMessage();
+            $scope.saveMessage();
         }
     }
 })();

@@ -20,14 +20,13 @@
         $scope.saveEducationDescriptions = saveEducationDescriptions;
 
         activate();
-
+        
         /////////////////////
-
+        
         function activate() {
             ResumeService.initResume($scope.uid);
             $scope.education = ResumeService.getEducation();
             $scope.educationDescriptions = ResumeService.geteducationDescriptions();
-
         }
 
         function saveMessage() {
