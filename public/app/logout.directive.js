@@ -10,11 +10,13 @@
         var directive = {
             restrict: 'E',
             template:
-            `<div class="container">
-            <div>
-              <h5 class="navbar-right"><a href="#" ng-click="logout()">Log Out</a></h5>
-              </div>
-            </div>`,
+            `<nav class="navbar navbar-default navbar-static-top">
+                  <div class="container">
+                    <div>
+                      <h5 class="navbar-right"><a href="#" ng-click="logout()">Log Out</a></h5>
+                    </div>
+                </div>
+            </nav>`,
             controller: 'DirectiveCtrl'
         }
         return directive;
