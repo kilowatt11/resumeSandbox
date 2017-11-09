@@ -31,7 +31,6 @@
         }
 
         function getCurrStep() {
-            console.log($state.$current)
             return $scope.steps.filter(function (step) {
                 return $state.$current.name === step.state
             })[0]

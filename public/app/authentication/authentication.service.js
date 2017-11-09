@@ -33,7 +33,8 @@
 
         function logout() {
             return authObj.$signOut();
-            $state.go('register')
+           
+            
         }
 
         function register(email, password) {
